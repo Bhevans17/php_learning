@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Home</title>
+    </head>
+    <body>
+        <!-- Navigation -->
+        <header>
+            <a href='#'>PHP Learning</a>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#">Store</a>
+                    </li>
+                    <li>
+                        <a href="#">Register</a>
+                    </li>
+                    <li>
+                        <a href="#">Login</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <hr>
+
+        <!-- Main -->
+        <main>
+            <h2>Create Account</h2>
+            <p>Fill in this form to register</p>
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control form-control-lg <?php echo (!empty($name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $name; ?>">
+                <span class="invalid-feedback"><?php echo $name_err; ?></span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" class="form-control form-control-lg <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
+                <span class="invalid-feedback"><?php echo $email_err; ?></span>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control form-control-lg <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
+                <span class="invalid-feedback"><?php echo $password_err; ?></span>
+              </div>
+              <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" name="confirm_password" class="form-control form-control-lg <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
+                <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+              </div>
+  
+              <div class="form-row">
+                <div class="col">
+                  <input type="submit" value="Register" class="btn btn-success btn-block">
+                </div>
+                <div class="col">
+                  <a href="login.php" class="btn btn-light btn-block">Have an account? Login</a>
+                </div>
+              </div>
+            </form>
+        </main>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <h4>PHP Learning</h4>
+            <p>Made by <a href="brendenevans.com">Brenden Evans</a></p>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Blog</a>
+                </li>
+                <li>
+                    <a href="#">Store</a>
+                </li>
+                <li>
+                    <a href="#">Register</a>
+                </li>
+                <li>
+                    <a href="#">Login</a>
+                </li>
+            </ul>
+        </footer>
+    </body>
+</html>
